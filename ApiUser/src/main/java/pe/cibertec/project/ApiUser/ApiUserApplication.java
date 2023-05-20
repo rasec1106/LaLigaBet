@@ -1,4 +1,4 @@
-package pe.cibertec.project.Api;
+package pe.cibertec.project.ApiUser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
