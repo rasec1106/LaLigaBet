@@ -1,4 +1,4 @@
-package pe.cibertec.project.Api;
+package pe.ciberte.project.ApiUser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

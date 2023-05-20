@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Cesar.Herrera
  */
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("api/bet")
 public class TestController {
     
     @GetMapping("/test")
