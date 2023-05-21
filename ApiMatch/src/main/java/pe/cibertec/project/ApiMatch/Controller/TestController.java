@@ -22,6 +22,6 @@ public class TestController {
     }
     @GetMapping("/test2")
     public String testResponse2(){
-        return "<h1>This is a test</h1>";
+        return "<h2>This is a test</h2>";
     }
 }
