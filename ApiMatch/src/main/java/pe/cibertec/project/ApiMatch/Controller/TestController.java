@@ -20,4 +20,8 @@ public class TestController {
     public String testResponse(){
         return "<h1>Your application is working</h1>";
     }
+    @GetMapping("/test2")
+    public String testResponse2(){
+        return "<h2>This is a test</h2>";
+    }
 }
