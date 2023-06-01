@@ -9,13 +9,15 @@ import lombok.Data;
 @Entity
 @Data
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
+    private String name;
     private String dni;
-    private String usuario;
-    private String correo;
-    private String contrasenia;
-    private Double saldo;
+    private String userName;
+    private String email;
+    private String password;
+    private Double balance;
+    
 }
