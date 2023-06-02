@@ -23,12 +23,12 @@ public class TeamServiceImpl implements TeamService{
 
     @Override
     public Team findByCountry(String country) {
-        return teamRepository.findByPais(country);
+        return teamRepository.findByCountry(country);
     }
 
     @Override
     public Team findByLeague(String league) {
-        return teamRepository.findByLiga(league);
+        return teamRepository.findByLeague(league);
     }
 
     @Override
