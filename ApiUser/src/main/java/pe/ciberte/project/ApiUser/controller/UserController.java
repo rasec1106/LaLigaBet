@@ -1,6 +1,7 @@
 package pe.ciberte.project.ApiUser.controller;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,19 +22,40 @@ public class UserController {
         return userServ.findByDni(dni);
     }
 
-    @GetMapping("/findByUserName/{username}")
-    public User findByUserName(@PathVariable String username) {
-        return userServ.findByUserName(username);
-    }
-
-    @GetMapping("/findById/{id}")
-    public User findById(@PathVariable Long id) {
-        return userServ.findById(id);
+    @GetMapping("/findByUserName/{userName}")
+    public User findByUserName(@PathVariable String userName) {
+        return userServ.findByUserName(userName);
     }
 
     @GetMapping("/findByEmail/{email}")
     public User findByEmail(@PathVariable String email) {
         return userServ.findByEmail(email);
+    }
+
+    @GetMapping("/findByUserNameOrEmailOrDni/{email}")
+    public Optional<User> findByUserNameOrEmailOrDni(@PathVariable String userName,
+            @PathVariable String email, @PathVariable String dni) {
+        return userServ.findByUserNameOrEmailOrDni(userName, email, dni);
+    }
+
+    @GetMapping("/existsByDni/{dni}")
+    public Boolean existsByDni(String dni) {
+        return userServ.existsByDni(dni);
+    }
+
+    @GetMapping("/existsByUserName/{userName}")
+    public Boolean existsByUserName(String userName) {
+        return userServ.existsByUserName(userName);
+    }
+
+    @GetMapping("/existsByEmail/{email}")
+    public Boolean existsByEmail(String email) {
+        return userServ.existsByEmail(email);
+    }
+
+    @GetMapping("/findById/{id}")
+    public User findById(@PathVariable Long id) {
+        return userServ.findById(id);
     }
 
 }
