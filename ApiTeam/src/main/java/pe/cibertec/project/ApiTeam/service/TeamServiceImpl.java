@@ -22,13 +22,13 @@ public class TeamServiceImpl implements TeamService{
     }
 
     @Override
-    public Team findByPais(String pais) {
-        return teamRepository.findByPais(pais);
+    public Team findByCountry(String country) {
+        return teamRepository.findByPais(country);
     }
 
     @Override
-    public Team findByLiga(String liga) {
-        return teamRepository.findByLiga(liga);
+    public Team findByLeague(String league) {
+        return teamRepository.findByLiga(league);
     }
 
     @Override
@@ -40,11 +40,11 @@ public class TeamServiceImpl implements TeamService{
     public Team update(Long id, Team team) {
         Team teamDB = teamRepository.findById(id).get();
         teamDB.setName(team.getName());
-        teamDB.setPais(team.getPais());
-        teamDB.setLiga(team.getLiga());
-        teamDB.setFechFundacion(team.getFechFundacion());
-        teamDB.setEstadio(team.getEstadio());
-        teamDB.setEntrenador(team.getEntrenador());
+        teamDB.setCountry(team.getCountry());
+        teamDB.setLeague(team.getLeague());
+        teamDB.setFoundationDate(team.getFoundationDate());
+        teamDB.setStadium(team.getStadium());
+        teamDB.setCoach(team.getCoach());
         
         return teamRepository.save(teamDB);
     }
