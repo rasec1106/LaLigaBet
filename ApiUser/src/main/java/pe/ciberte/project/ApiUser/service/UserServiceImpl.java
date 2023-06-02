@@ -65,19 +65,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User update(Long id, User user) {
-        User userElement = userRepo.findById(id).get();
-        userElement.setName(userElement.getName());
-        userElement.setDni(userElement.getDni());
-        userElement.setUserName(userElement.getUserName());
-        userElement.setEmail(userElement.getEmail());
-        userElement.setBalance(userElement.getBalance());
-        return userRepo.save(userElement);
+        User targetUser = userRepo.findById(id).get();
+        targetUser.setName(user.getName());
+        targetUser.setDni(user.getDni());
+        targetUser.setUserName(user.getUserName());
+        targetUser.setEmail(user.getEmail());
+        targetUser.setBalance(user.getBalance());
+        return userRepo.save(targetUser);
     }
 
     @Override
     public void delete(Long id) {
-        User userElement = userRepo.findById(id).get();
-        userRepo.delete(userElement);
+        User targetUser = userRepo.findById(id).get();
+        userRepo.delete(targetUser);
     }
 
 }
