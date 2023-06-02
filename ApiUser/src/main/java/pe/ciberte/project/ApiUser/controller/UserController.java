@@ -3,8 +3,12 @@ package pe.ciberte.project.ApiUser.controller;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pe.ciberte.project.ApiUser.entity.User;
@@ -56,6 +60,26 @@ public class UserController {
     @GetMapping("/findById/{id}")
     public User findById(@PathVariable Long id) {
         return userServ.findById(id);
+    }
+    
+    public List<User> findAll() {
+        return userServ.findAll();
+    }
+
+    @PostMapping("/add")
+    public User add(@RequestBody User user) {
+        return userServ.add(user);
+    }
+
+    @PutMapping("/update/{id}")
+    public User update(@PathVariable Long id,
+            @RequestBody User user) {
+        return userServ.update(id, user);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
+        userServ.delete(id);
     }
 
 }
