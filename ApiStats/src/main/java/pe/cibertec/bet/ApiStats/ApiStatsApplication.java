@@ -1,4 +1,4 @@
-package pe.cibertec.project.ApiStats;
+package pe.cibertec.bet.ApiStats;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
