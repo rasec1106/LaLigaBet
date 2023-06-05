@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package pe.cibertec.project.ApiBet.service;
+
+import java.util.List;
+import pe.cibertec.project.ApiBet.entity.Bet;
 
 /**
  *
- * @author WINDOWS_LOCAL
+ * @author Henrry
  */
 public interface BetService {
-    
+
+    List<Bet> findAll();
+
+    Bet findById(Long idBet);
+
+    Bet add(Bet bet);
+
+    Bet update(Long idbet, Bet bet);
+
+    void delete(Long idBet);
 }
