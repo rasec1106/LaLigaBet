@@ -5,6 +5,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
 import lombok.Data;
+/*
+import pe.cibertec.project.ApiUser.*;*/
 
 /**
  *
@@ -14,16 +16,14 @@ import lombok.Data;
 @Data
 public class Bet {
     
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idbet;
-    private String Matchid;
-    private Double Result;
-    private Double Gain1;
-    private Double DraWin;
-    private Double Gain2;
-    private Double FullBet;
-    /*
-    private String image;*/
+    private Long idBet;
+    private Long idUser;
+    private Long idMacth;
+    private Double Cuotamax;
+    private Double Cuotamin;
+
+    
 }
   
