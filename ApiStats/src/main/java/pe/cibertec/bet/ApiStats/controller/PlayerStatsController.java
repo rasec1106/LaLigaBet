@@ -82,7 +82,7 @@ public class PlayerStatsController {
     
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long idPlayer){
-        customerService.delete(idPlayer);
+        playerStatsService.delete(idPlayer);
     }
     
     

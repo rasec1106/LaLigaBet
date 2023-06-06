@@ -1,4 +1,3 @@
-
 package pe.cibertec.bet.ApiStats.service;
 
 import java.util.List;
@@ -31,16 +30,6 @@ public class PlayerStatsServiceImpl implements PlayerStatsService{
         new EntityNotFoundException("Player stats do not exists with id:" +idPlayer.toString()));  
     }
     
-    /*@Override
-    public PlayerStats findByEmail(String email) {
-        return statsRepository.findByEmail(email);//.orElse(null);  
-    }
-
-    @Override
-    public PlayerStats findByPhone(String phone) {
-        return statsRepository.findByPhone(phone);
-    }*/
-
     @Override
     public PlayerStats add(PlayerStats playerStats) {
         return statsRepository.save(playerStats);
