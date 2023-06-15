@@ -1,4 +1,3 @@
-
 package pe.cibertec.bet.ApiStats.dto;
 
 import java.util.Date;
@@ -26,4 +25,5 @@ public class ErrorResponseDto {
         this.status = httpStatus.name();
         this.message = message;
         this.stackTrace = stackTrace;
+}
 }

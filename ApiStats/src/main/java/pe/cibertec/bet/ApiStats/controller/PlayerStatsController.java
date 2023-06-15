@@ -40,10 +40,10 @@ public class PlayerStatsController {
                 HttpStatus.OK);
     }
     
-    @GetMapping("/findByNameContaining/name/{name}/page/{page}/size/{size}")
-    public ResponseEntity<Page<PlayerStats>> findByNameContaining(
+    @GetMapping("/findByPlayerNameContaining/playerName/{playerName}/page/{page}/size/{size}")
+    public ResponseEntity<Page<PlayerStats>> findByPlayerNameContaining(
             @PathVariable String playerName, @PathVariable int page,@PathVariable int size){
-        return new ResponseEntity<>(playerStatsService.findByNameContaining(playerName,page,size),
+        return new ResponseEntity<>(playerStatsService.findByPlayerNameContaining(playerName,page,size),
                 HttpStatus.OK);
     }
     
@@ -52,20 +52,6 @@ public class PlayerStatsController {
         return new ResponseEntity<>(playerStatsService.findById(idPlayer),
         HttpStatus.OK) ;
     }
-    
-    /*@GetMapping("/findByEmail/{email}")
-    public ResponseEntity<Customer> findByEmail(@PathVariable String email){
-        return new ResponseEntity<>(customerService.findByEmail(email),
-        HttpStatus.OK) ;
-    }
-    
-    @GetMapping("/findByPhone")
-    public ResponseEntity<Customer> findByPhone(@RequestParam String phone){
-        return new ResponseEntity<>(customerService.findByPhone(phone),
-        HttpStatus.OK);
-    }
-    */
-    //Se agrega un objeto ResponseEntity con 3 componentes: Body, Status code, Header
     
     @PostMapping("/add")
     public ResponseEntity<PlayerStats> add(@Validated@RequestBody PlayerStats playerStats){
@@ -82,7 +68,7 @@ public class PlayerStatsController {
     
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long idPlayer){
-        customerService.delete(idPlayer);
+        playerStatsService.delete(idPlayer);
     }
     
     
