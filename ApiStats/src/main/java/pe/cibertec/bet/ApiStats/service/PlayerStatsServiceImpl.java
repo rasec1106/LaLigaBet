@@ -40,8 +40,6 @@ public class PlayerStatsServiceImpl implements PlayerStatsService{
     public PlayerStats update(Long idPlayer, PlayerStats playerStats) {
         PlayerStats playerStatsDB = statsRepository.findById(idPlayer).get();
         playerStatsDB.setPlayerName(playerStats.getPlayerName());
-        /*playerStatsDB.setEmail(customer.getEmail());
-        playerStatsDB.setPhone(customer.getPhone());*/
         return statsRepository.save(playerStatsDB);
     }
 
@@ -52,7 +50,7 @@ public class PlayerStatsServiceImpl implements PlayerStatsService{
     }
 
     @Override
-    public Page<PlayerStats> findByNameContaining(String playerName, int page, int size) {
-        return statsRepository.findByNameContaining(playerName, PageRequest.of(page, size));
+    public Page<PlayerStats> findByPlayerNameContaining(String playerName, int page, int size) {
+        return statsRepository.findByPlayerNameContaining(playerName, PageRequest.of(page, size));
     }
 }
