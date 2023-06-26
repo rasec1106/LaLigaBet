@@ -19,6 +19,8 @@ public class MatchServiceImpl implements MatchService{
 
     @Autowired
     private MatchRepository matchRepository;
+    @Autowired
+    private ApiRestClient apiRestClient;
     
     @Override
     public List<Match> findAll() {
@@ -52,5 +54,19 @@ public class MatchServiceImpl implements MatchService{
         Match matchDB = matchRepository.findById(id).get();
         matchRepository.delete(matchDB);
     }
-    
+
+    @Override
+    public Match simulateMatch(Long id) {        
+        // process to call apiscore
+        //Match simulated = apiRestClient.simulateMatch(id);
+        Match simulated = matchRepository.findById(id).get();
+        simulated.setHomeTeamScore(getRandomNumber());
+        simulated.setAwayTeamScore(getRandomNumber());
+        return matchRepository.save(simulated);        
+    }
+    private int getRandomNumber(){
+        int min = 0;
+        int max = 5;
+        return (int) Math.floor(Math.random() * (max - min +1) + min);
+    }
 }
