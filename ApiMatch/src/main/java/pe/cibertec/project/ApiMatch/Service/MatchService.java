@@ -17,4 +17,5 @@ public interface MatchService {
     public Match add(Match match);
     public Match update(Long id, Match match);
     public void delete(Long id);
+    public Match simulateMatch(Long id);
 }
